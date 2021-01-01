@@ -1,16 +1,8 @@
-#include <conio.h>
-
-#include <cstdio>
-
-#include <iostream>
-
-#include <string.h>
-
-#include <cstdlib>
+ #include<bits/stdc++.h>
 
 using namespace std;
  
- static int p =0;
+ static int p =0; 
  
  class a
  {
@@ -138,7 +130,7 @@ void a :: install()
 	   if (n>p)
 	   
 	   {
-	   	 cout<<"Enter correct bus no.\n";
+	   	 cout<<"Enter correct bus no ! \n";
 	   	 
 	   	 goto top;
 	
@@ -183,19 +175,19 @@ void a :: install()
 	     while(n<=p)
 	     
 	     {
-	     	 vline('~');
+	     	 vline('#');
 	     	 
 	     	 cout<<"\nBus no : \t"<<bus[n].busn
 	     	 
-	     	 <<"\n Driver : \t"<<bus[n].driver<<"\t\t Arrival time : \t"
+	     	 <<"\nDriver : \t"<<bus[n].driver<<"\t\tArrival time : \t"
 	     	 
 	     	 <<bus[n].arrival<<"\tDeparture time :"<<bus[n].depart
 	     	 
-	     	 <<"\nFrom : \t\t"<<bus[n].from<<"\t\t To : \t\t"
+	     	 <<"\nFrom : \t\t"<<bus[n].from<<"\t\tTo : \t\t"
 	     	 
 	     	 <<bus[n].to <<"\n";
 	     	 
-	     	 vline('~');
+	     	 vline('#');
 	     	 
 	     	 bus[0].position(n);
 	     	 
@@ -219,7 +211,7 @@ void a :: install()
 	
 	    if(n>p)
 	    
-	    cout<<"Enter correct bus no :";
+	    cout<<"Enter correct bus no ! ";
 	    
 	}
 	
@@ -286,19 +278,18 @@ void a :: install()
            for(int n=0;n<p;n++)
            
            {
-           	 vline('~');
+           	 vline('#');
+           	 
            	 
            	 cout<<"\nBus no : \t"<<bus[n].busn<<"\nDriver Name : \t"<<bus[n].driver
            	 
-           	 <<"\t\tArrival time : \t"<<bus[n].arrival<<"\t\tDeparture Time :\t"
+           	 <<"\t\tArrival time : \t"<<bus[n].arrival<<"\tDeparture Time :\t"
            	 
            	 <<bus[n].depart<<"\nFrom :\t\t"<<bus[n].from<<"\t\tTo\t\t\t"
            	 
            	 <<bus[n].to<<"\n";
            	 
-           	 vline('~');
-           	 
-           	 vline('_');
+           	 vline('#');
            	 
            
 		   }
