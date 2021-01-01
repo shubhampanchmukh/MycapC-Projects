@@ -5,7 +5,17 @@
 #include <conio.h>
 #include <iomanip>
 
-using namespace std;
+using namespace std; 
+
+ void vline(char ch)
+  
+{
+	for (int i=80;i>0;i--)
+	
+	cout<<ch;
+	
+}
+
 int main()
 {
 	FILE *fp,*ft;
@@ -15,7 +25,8 @@ int main()
 	{
 		char first_name[50], last_name[50];
 		char course[100];
-		int section;
+	
+		int Rollno;
 	};
 	
 	struct student e;
@@ -41,7 +52,7 @@ int main()
      {
      	system("cls");
      	
-     	cout<<"\t\t======= STUDENT DATABASE MANAGEMENT SYSYTEM =======";
+     	cout<<"\t\t############### STUDENT DATABASE MANAGEMENT SYSYTEM ###############";
      	cout<<"\n\n                                           ";
      	cout<<"\n\n";
      	cout<<"\n \t\t\t 1. Add Records";
@@ -65,8 +76,10 @@ int main()
      				cin>>e.first_name;
      				cout<<"Enter the Last Name : ";
      				cin>>e.last_name;
-     				cout<<"Enter the Section : ";
-     				cin>>e.section;
+     				cout<<"Enter the course : ";
+     				cin>>e.course;
+     				cout<<"Enter the Rollno : ";
+     				cin>>e.Rollno;
      				fwrite(&e,recsize,1,fp);
      				cout<<"\n Add Another Record (Y/N) ";
      				fflush(stdin);
@@ -81,9 +94,10 @@ int main()
      				while (fread(&e,recsize,1,fp) ==1)
                     {
                     	cout<<"\n";
-                    	cout<<"\n"<<e.first_name<< setw(10) <<e.last_name;
-                    	cout<<"\n";
-                    	cout<<"\n "<<e.course << setw(8)   <<e.section;
+                    	cout<<"\n"<<"NAME : "<<e.first_name<< setw(10) <<e.last_name;
+                    	
+                    	cout<<"\n"<<"COURSE :"<<e.course << setw(8)   ;
+                    	cout<<"\nRoll NO. :"<<e.Rollno;
                     }
                     cout<<"\n\n";
                     system("pause");
@@ -106,10 +120,10 @@ int main()
 						  		cin>>e.first_name;
 						  			cout<<"Enter new the Last Name : ";
 						  		cin>>e.last_name;
-						  			cout<<"Enter new the Course : ";
+						  			cout<<"Enter new  Course : ";
 						  		cin>>e.course;
-						  			cout<<"Enter new the first Name : ";
-						  		cin>>e.section;
+			                    cout<<"Enter new Roll No. : ";
+						  		cin>>e.Rollno;
 							  fseek(fp,  -recsize, SEEK_CUR);
 							  fwrite(&e,recsize,1,fp);
 							  break;
@@ -159,7 +173,9 @@ int main()
 					case '5' :
 						 fclose(fp);
 						 cout<<"\n\n";
-						 cout<<"\t\t    THANK YOU FOR USING THIS SOFTWARE ";
+						 vline('#');
+						 cout<<"\n\t\t    THANK YOU FOR USING THIS SOFTWARE \n";
+						 vline('#');
 						 cout<<"\n\n";
 						 exit(0);
 		 }
